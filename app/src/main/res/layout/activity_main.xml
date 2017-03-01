@@ -12,6 +12,7 @@
         android:id="@+id/bStartedService"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="startedService"/>
+        android:onClick="startedService"
+        android:text="Android Service"/>
 
 </RelativeLayout>
