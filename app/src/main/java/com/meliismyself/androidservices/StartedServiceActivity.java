@@ -18,6 +18,7 @@ public class StartedServiceActivity extends AppCompatActivity {
     public void startStartedService(View view) {
         try {
             Intent intent = new Intent(StartedServiceActivity.this, MyStartedService.class);
+            intent.putExtra("sleepTime", 10);
             startService(intent);
         }catch (Exception e){
             Log.d(TAG, " ERROR SERVICE " + e.getMessage());
@@ -28,5 +29,11 @@ public class StartedServiceActivity extends AppCompatActivity {
     public void stopStartedService(View view) {
         Intent intent = new Intent(StartedServiceActivity.this, MyStartedService.class);
         stopService(intent);
+    }
+
+    public void startIntentService(View view) {
+        Intent intent = new Intent(StartedServiceActivity.this, MyIntentService.class);
+        intent.putExtra("sleepTime", 10);
+        startService(intent);
     }
 }

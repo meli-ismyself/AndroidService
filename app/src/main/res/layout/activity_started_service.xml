@@ -30,4 +30,11 @@
         android:layout_below="@+id/btnStartStartedService"
         android:onClick="stopStartedService"
         android:text="Stop the Started Service"/>
+    <Button
+        android:id="@+id/btnStartIntentService"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnStopStartedService"
+        android:onClick="startIntentService"
+        android:text="Start Intent Service"/>
 </RelativeLayout>
