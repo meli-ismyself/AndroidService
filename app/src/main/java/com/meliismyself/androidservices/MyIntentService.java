@@ -2,7 +2,10 @@ package com.meliismyself.androidservices;
 
 import android.app.IntentService;
 import android.content.Intent;
+import android.os.Bundle;
+import android.os.ResultReceiver;
 import android.util.Log;
+import com.meliismyself.androidservices.StartedServiceActivity.MyResultReceiver;
 
 /**
  * Created by meli.oktavia on 09/03/2017.
@@ -27,6 +30,7 @@ public class MyIntentService extends IntentService {
         Log.i(TAG, "onHandleIntent, Thread name " + Thread.currentThread().getName());
 
         int sleepTime = intent.getIntExtra("sleepTime", 1);
+        ResultReceiver resultReceiver = intent.getParcelableExtra("receiver");
 
         int ctr =1;
 
@@ -41,6 +45,10 @@ public class MyIntentService extends IntentService {
 
             ctr++;
         }
+
+        Bundle bundle = new Bundle();
+        bundle.putString("resultIntentService", "Counter stopped at " + ctr + "seconds");
+        resultReceiver.send(18, bundle);
     }
 
     @Override
